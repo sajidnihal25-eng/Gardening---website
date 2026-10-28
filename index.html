@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garden Now Landscaping | Orlando, FL</title>
+<meta name="description" content="Women-owned Orlando landscaping company: lawn replacement, pavers, landscape design, irrigation and lighting. Call (407) 914-1712 for a free quote.">
+<meta name="theme-color" content="#064E3B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#059669; --primary-d:#047857; --secondary:#10B981;
+  --accent:#EA580C; --accent-d:#C2410C;
+  --bg:#ffffff; --tint:#ECFDF5; --fg:#064E3B; --ink:#0B1F19;
+  --card:#fff; --muted:#E8F1F3; --muted-fg:#475569; --border:#A7F3D0;
+  --radius:20px; --ease:cubic-bezier(.22,1,.36,1);
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-d)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px}
+h1,h2,h3{line-height:1.08;letter-spacing:-.035em;color:var(--fg);text-wrap:balance}
+h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800}
+.lead{color:var(--muted-fg);font-size:1.125rem;max-width:56ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;cursor:pointer;border:0;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 28px -10px rgba(234,88,12,.7)}
+.btn-primary:hover{background:var(--accent-d);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--border)}
+.btn-ghost:hover{background:var(--tint);transform:translateY(-2px)}
+.ico{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* NAV */
+.nav{position:fixed;inset:12px 0 auto 0;z-index:50;pointer-events:none}
+.nav .bar{pointer-events:auto;max-width:var(--wrap);margin-inline:20px auto;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 20px;border-radius:999px;background:rgba(255,255,255,.78);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 8px 30px -12px rgba(6,78,59,.28),inset 0 0 0 1px rgba(167,243,208,.7);width:calc(100% - 24px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em;color:var(--fg);font-size:18px}
+.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--primary);color:#fff}
+.logo small{display:block;font-size:9.5px;letter-spacing:.32em;font-weight:600;color:var(--primary);margin-top:-3px}
+.links{display:flex;gap:28px;font-size:15px;font-weight:500;color:var(--muted-fg)}
+.links a{transition:color .2s}.links a:hover{color:var(--primary-d)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+.logo span,.nav .btn{white-space:nowrap}
+@media(max-width:820px){.links{display:none}}
+@media(max-width:520px){.nav .btn{font-size:0;gap:0;padding:0 16px}.nav .btn svg{width:20px;height:20px}.nav .btn::after{content:"Call";font-size:15px;margin-left:8px}}
+
+/* HERO (scroll-scrubbed) */
+.scrub{position:relative;height:340vh;background:#fff}
+.stick{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;display:grid;align-items:center;
+  background:radial-gradient(900px 500px at 78% 55%,#f0fdf6 0,#fff 70%)}
+.stage{position:absolute;inset:0;display:grid;place-items:center}
+.stage video,.stage img{position:absolute;width:min(1060px,62vw);max-width:none;height:auto;right:-2vw;top:54%;transform:translateY(-50%);mix-blend-mode:multiply}
+.copy{position:relative;z-index:2;pointer-events:none}
+.copy .wrap{display:grid}
+.phase{grid-area:1/1;max-width:560px;opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease);align-self:center}
+.phase.on{opacity:1;transform:none}
+.phase.on .btn{pointer-events:auto}
+.phase h1,.phase h2.big{font-size:clamp(2.6rem,6.4vw,5.2rem);font-weight:800;margin:14px 0 18px}
+.phase h1 em,.phase h2.big em{font-style:normal;color:var(--primary)}
+.phase .lead{margin-bottom:28px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;background:var(--tint);color:var(--primary-d);box-shadow:inset 0 0 0 1px var(--border)}
+.chip svg{width:15px;height:15px}
+.progress{position:absolute;left:50%;bottom:26px;translate:-50% 0;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-fg);transition:opacity .4s}
+.progress .track{width:120px;height:3px;border-radius:3px;background:var(--muted);overflow:hidden}
+.progress .fill{display:block;height:100%;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+@media(max-width:820px){
+  .stick{align-items:start;padding-top:96px}
+  .stage video,.stage img{width:170vw;right:-36vw;top:auto;bottom:6%;transform:none}
+  .phase{max-width:100%}
+  .phase h1,.phase h2.big{font-size:clamp(2.2rem,10vw,3.2rem)}
+  .phase .lead{font-size:1rem}
+  .badges{display:none}
+}
+
+/* TRUST */
+.trust{background:var(--fg);color:#d1fae5;padding:26px 0}
+.trust ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
+.trust svg{color:var(--secondary);flex:none}
+.trust b{display:block;color:#fff;font-size:1.3rem;letter-spacing:-.02em;line-height:1.1}
+@media(max-width:820px){.trust ul{grid-template-columns:1fr 1fr}}
+
+section{position:relative}
+.pad{padding:110px 0}
+@media(max-width:700px){.pad{padding:72px 0}}
+.head{display:grid;gap:16px;margin-bottom:54px;justify-items:start}
+
+/* SERVICES */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(210px,auto);gap:16px}
+.tile{position:relative;overflow:hidden;border-radius:var(--radius);padding:28px;background:var(--tint);box-shadow:inset 0 0 0 1px var(--border);display:flex;flex-direction:column;justify-content:flex-end;gap:10px;transition:transform .4s var(--ease),box-shadow .4s var(--ease);isolation:isolate}
+.tile:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--secondary),0 24px 44px -26px rgba(6,78,59,.45)}
+.tile h3{font-size:1.45rem;font-weight:700}
+.tile p{color:var(--muted-fg);font-size:15px;max-width:42ch}
+.tile .ic{position:absolute;top:24px;left:28px;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#fff;color:var(--primary);box-shadow:0 6px 16px -8px rgba(6,78,59,.4)}
+.t-a{grid-column:span 4;grid-row:span 2;color:#fff;background:#064E3B}
+.t-a h3,.t-a p{color:#fff}.t-a p{opacity:.85}
+.t-a img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.t-a:hover img{transform:scale(1.05)}
+.t-a::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,78,59,0) 30%,rgba(6,40,30,.88))}
+.t-b,.t-c{grid-column:span 2}
+.t-d{grid-column:span 3;background:#fff7ed;box-shadow:inset 0 0 0 1px #fed7aa}
+.t-d .ic{color:var(--accent)}
+.t-e{grid-column:span 3;background:var(--muted);box-shadow:inset 0 0 0 1px #cfe3e7}
+@media(max-width:900px){.bento{grid-template-columns:1fr 1fr}.t-a{grid-column:span 2;grid-row:span 1;min-height:340px}.t-b,.t-c,.t-d,.t-e{grid-column:span 1}}
+@media(max-width:560px){.bento{grid-template-columns:1fr}.t-b,.t-c,.t-d,.t-e{grid-column:span 1}}
+
+/* PROCESS */
+.process{background:var(--tint)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{background:#fff;border-radius:var(--radius);padding:32px;box-shadow:0 1px 0 var(--border),0 24px 40px -32px rgba(6,78,59,.5);counter-increment:s}
+.step::before{content:"0" counter(s);display:block;font-size:3rem;font-weight:800;letter-spacing:-.05em;color:var(--secondary);line-height:1;margin-bottom:18px}
+.step h3{font-size:1.3rem;margin-bottom:8px}
+.step p{color:var(--muted-fg);font-size:15px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* REEL */
+.reel{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.phone{position:relative;width:min(340px,100%);aspect-ratio:3/4;margin-inline:auto;border-radius:34px;padding:10px;background:#0b1f19;box-shadow:0 50px 80px -40px rgba(6,78,59,.7),0 0 0 1px rgba(255,255,255,.08) inset}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:26px;background:#000}
+.phone button{position:absolute;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--fg);display:grid;place-items:center;cursor:pointer;transition:transform .2s}
+.phone button:hover{transform:scale(1.08)}
+.phone button svg{width:20px;height:20px}
+.checks{list-style:none;padding:0;display:grid;gap:14px;margin:28px 0 34px}
+.checks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.checks svg{flex:none;color:var(--primary);margin-top:3px;width:22px;height:22px}
+@media(max-width:900px){.reel{grid-template-columns:1fr;gap:44px}.reel .phone{order:2}}
+
+/* REVIEWS */
+.reviews{background:var(--fg);color:#fff;overflow:hidden}
+.reviews h2{color:#fff}.reviews .eyebrow{color:var(--secondary)}.reviews .lead{color:#a7f3d0}
+.revgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:rgba(255,255,255,.06);border-radius:var(--radius);padding:30px;box-shadow:inset 0 0 0 1px rgba(167,243,208,.18);display:flex;flex-direction:column;gap:18px;transition:background .3s,transform .4s var(--ease)}
+.rev:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.stars{display:flex;gap:3px;color:#FBBF24}.stars svg{width:18px;height:18px;fill:currentColor;stroke:none}
+.rev blockquote{font-size:1.04rem;line-height:1.6;color:#ecfdf5}
+.who{display:flex;gap:12px;align-items:center;font-size:14px;margin-top:auto}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--secondary);color:var(--fg)}
+.who small{display:block;color:#86efac;opacity:.85}
+.reply{font-size:13.5px;color:#a7f3d0;border-left:2px solid var(--accent);padding-left:12px}
+.reply b{color:#fff;display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:38px}
+.tags span{font-size:13px;font-weight:500;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:#d1fae5;box-shadow:inset 0 0 0 1px rgba(167,243,208,.2)}
+.tags b{color:var(--secondary);margin-left:5px}
+@media(max-width:960px){.revgrid{grid-template-columns:1fr}}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:stretch}
+.cards{display:grid;gap:14px;margin-top:30px}
+.row{display:flex;gap:16px;align-items:center;padding:18px 20px;border-radius:16px;background:var(--tint);box-shadow:inset 0 0 0 1px var(--border);transition:transform .3s var(--ease),background .2s}
+a.row:hover{transform:translateX(4px);background:#d1fae5}
+.row .ic{width:46px;height:46px;flex:none;border-radius:13px;background:#fff;color:var(--primary);display:grid;place-items:center}
+.row small{display:block;color:var(--muted-fg);font-size:13px}
+.row strong{font-size:1.05rem;letter-spacing:-.01em}
+.hours{width:100%;font-size:14.5px;border-collapse:collapse;margin-top:4px}
+.hours td{padding:3px 0}.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.today{color:var(--accent-d);font-weight:700}
+.open{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;background:#fff;margin-bottom:8px}
+.open i{width:8px;height:8px;border-radius:50%;background:#94a3b8}
+.open.is-open i{background:#16a34a;box-shadow:0 0 0 4px rgba(22,163,74,.2)}
+.map{border-radius:var(--radius);overflow:hidden;min-height:440px;box-shadow:inset 0 0 0 1px var(--border);background:var(--muted)}
+.map iframe{width:100%;height:100%;min-height:440px;border:0;display:block}
+@media(max-width:900px){.contact{grid-template-columns:1fr}}
+
+/* CTA + FOOTER */
+.final{background:linear-gradient(135deg,var(--primary-d),var(--fg));color:#fff;border-radius:32px;padding:clamp(40px,7vw,84px);display:grid;gap:22px;justify-items:start;position:relative;overflow:hidden;margin-bottom:110px}
+.final h2{color:#fff;max-width:16ch}.final .lead{color:#d1fae5}
+.final::after{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(closest-side,rgba(16,185,129,.55),transparent)}
+footer{border-top:1px solid var(--muted);padding:34px 0 46px;font-size:14px;color:var(--muted-fg)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+footer a:hover{color:var(--primary-d)}
+
+/* mobile call bar */
+.callbar{display:none}
+@media(max-width:700px){
+  .callbar{display:flex;position:fixed;inset:auto 12px 12px 12px;z-index:60;gap:10px}
+  .callbar .btn{flex:1;min-height:52px;box-shadow:0 16px 30px -12px rgba(6,40,30,.55)}
+  footer{padding-bottom:96px}
+}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition-duration:.01ms!important;animation:none!important}
+  .rv{opacity:1;transform:none}
+  .scrub{height:auto}.stick{position:relative;height:auto;min-height:100svh}
+  .phase{opacity:1;transform:none}.phase:not(:first-child){display:none}
+  .progress{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.5 6-7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.7c3.5 4 6 7 6 10.3a6 6 0 0 1-12 0c0-3.3 2.5-6.300 6-10.300Z"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.700c.6.500 1 1.300 1 2.300h6c0-1 .4-1.800 1-2.300A7 7 0 0 0 12 2Z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10M10 20c5.500-2.500.8-6.400 3-10M9.500 9.400c1.100.9 1.800 2.200 2 3.600-1.500.200-3.100-.5-4-1.800-.8-1.200-.8-2.500-.8-3.600 1.400-.1 2.700.7 2.800 1.800ZM14.100 6a3.500 3.500 0 0 1-.1 1.800c-.7 1.600-2.300 2.500-3.700 2.600 0-1.400.3-2.800 1.300-3.900A5 5 0 0 1 14.100 6Z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8Z" fill="currentColor"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 4h3v16H7zM14 4h3v16h-3z" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="bar">
+    <a href="#top" class="logo" aria-label="Garden Now Landscaping home">
+      <i><svg class="ico" width="20" height="20"><use href="#i-leaf"/></svg></i>
+      <span>Garden Now<small>LANDSCAPING</small></span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services">Services</a><a href="#process">Process</a><a href="#work">Our work</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-primary" href="tel:+14079141712"><svg class="ico"><use href="#i-phone"/></svg>(407) 914-1712</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO: van video scrubs with scroll -->
+<section class="scrub" id="hero" aria-label="Introduction">
+  <div class="stick">
+    <div class="stage" aria-hidden="true">
+      <img id="poster" src="assets/van-start.jpg" alt="" fetchpriority="high">
+      <video id="van" muted playsinline preload="auto" tabindex="-1" src="assets/van.mp4"></video>
+    </div>
+    <div class="copy">
+      <div class="wrap">
+        <div class="phase on" data-from="0">
+          <span class="eyebrow">Orlando, Florida · Women-owned</span>
+          <h1>Your yard, <em>done right.</em></h1>
+          <p class="lead">Lawns, pavers, lighting and irrigation, designed and built by a local team that shows up with everything it needs.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+14079141712"><svg class="ico"><use href="#i-phone"/></svg>Get a free quote</a>
+            <a class="btn btn-ghost" href="#work">See our work</a>
+          </div>
+          <div class="badges">
+            <span class="chip"><svg class="ico"><use href="#i-heart"/></svg>LGBTQ+ friendly</span>
+            <span class="chip"><svg class="ico"><use href="#i-check"/></svg>42 Google reviews</span>
+          </div>
+        </div>
+        <div class="phase" data-from="0.34">
+          <span class="eyebrow">Fully equipped</span>
+          <h2 class="big">Every tool, <em>in motion.</em></h2>
+          <p class="lead">Ladders, mowers, trimmers, soil and plants. We bring the whole workshop to your property so jobs move fast and stay clean.</p>
+        </div>
+        <div class="phase" data-from="0.68">
+          <span class="eyebrow">Ready for yours</span>
+          <h2 class="big">Packed, organized, <em>on the way.</em></h2>
+          <p class="lead">Tell us about your project and we’ll work within your budget.</p>
+          <div class="cta-row"><a class="btn btn-primary" href="tel:+14079141712"><svg class="ico"><use href="#i-phone"/></svg>Call (407) 914-1712</a><a class="btn btn-ghost" href="#services">Explore services</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><span>Scroll</span><span class="track"><span class="fill" id="fill"></span></span></div>
+  </div>
+</section>
+
+<section class="trust" aria-label="Highlights">
+  <div class="wrap"><ul>
+    <li><svg class="ico" width="30" height="30"><use href="#i-star"/></svg><span><b>42</b>Google reviews</span></li>
+    <li><svg class="ico" width="30" height="30"><use href="#i-heart"/></svg><span><b>Women-owned</b>Local Orlando team</span></li>
+    <li><svg class="ico" width="30" height="30"><use href="#i-check"/></svg><span><b>LGBTQ+ friendly</b>Everyone welcome</span></li>
+    <li><svg class="ico" width="30" height="30"><use href="#i-clock"/></svg><span><b>Mon – Sat</b>Open from 7 am</span></li>
+  </ul></div>
+</section>
+
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">What we do</span><h2>Outdoor spaces people<br>actually want to live in.</h2><p class="lead">From a full lawn replacement to a custom paver patio, one crew handles it from first sketch to final walkthrough.</p></div>
+    <div class="bento">
+      <article class="tile t-a rv"><img src="assets/patio.jpg" alt="Finished patio with pavers, string lights and fire pit at sunset" loading="lazy"><span class="ic"><svg class="ico"><use href="#i-grid"/></svg></span><h3>Pavers &amp; patios</h3><p>Professional paver installation, finished on time and built to lift your home’s beauty and value.</p></article>
+      <article class="tile t-b rv" style="--d:.08s"><span class="ic"><svg class="ico"><use href="#i-sprout"/></svg></span><h3>Lawn replacement</h3><p>Out with the tired turf, in with a lawn that looks perfect.</p></article>
+      <article class="tile t-c rv" style="--d:.16s"><span class="ic"><svg class="ico"><use href="#i-pencil"/></svg></span><h3>Landscape design</h3><p>Backyard transformations shaped around your taste.</p></article>
+      <article class="tile t-d rv" style="--d:.08s"><span class="ic"><svg class="ico"><use href="#i-bulb"/></svg></span><h3>Landscape lighting</h3><p>Warm, layered light that makes evenings outside feel special.</p></article>
+      <article class="tile t-e rv" style="--d:.16s"><span class="ic"><svg class="ico"><use href="#i-drop"/></svg></span><h3>Irrigation systems</h3><p>Smart watering so every plant gets what it needs.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pad process" id="process">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">How it works</span><h2>Three steps. Zero stress.</h2></div>
+    <div class="steps">
+      <div class="step rv"><h3>Tell us your vision</h3><p>Call or message us. We listen, visit, and talk through ideas and budget.</p></div>
+      <div class="step rv" style="--d:.1s"><h3>We design &amp; build</h3><p>Customized projects, carried out by a crew that follows up on every detail.</p></div>
+      <div class="step rv" style="--d:.2s"><h3>Enjoy your space</h3><p>The owner personally checks in, so you never have to chase issues.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="work">
+  <div class="wrap reel">
+    <div class="rv">
+      <span class="eyebrow">Our work</span>
+      <h2 style="margin:14px 0 18px">Watch a backyard<br>transform.</h2>
+      <p class="lead">From bare ground to a finished patio with lighting and a fire pit. Real project, real crew.</p>
+      <ul class="checks">
+        <li><svg class="ico"><use href="#i-check"/></svg>Customized projects built around your space</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Clean installs, finished on schedule</li>
+        <li><svg class="ico"><use href="#i-check"/></svg>Honest pricing that respects your budget</li>
+      </ul>
+      <div class="cta-row"><a class="btn btn-primary" href="tel:+14079141712">Start your project<svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/gardennowlandscaping" target="_blank" rel="noopener"><svg class="ico"><use href="#i-insta"/></svg>More on Instagram</a></div>
+    </div>
+    <div class="phone rv" style="--d:.12s">
+      <video id="reel" src="assets/reel.mp4" poster="assets/reel-poster.jpg" muted loop playsinline preload="metadata" aria-label="Garden Now Landscaping project video"></video>
+      <button id="reelBtn" aria-label="Pause video"><svg class="ico"><use href="#i-pause"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section class="pad reviews" id="reviews">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Reviews</span><h2>Neighbors say it best.</h2><p class="lead">42 reviews on Google. Customers mention attention to detail, great service and staying within budget.</p></div>
+    <div class="tags rv" aria-label="Common review topics"><span>Attention to detail<b>5</b></span><span>Attentive<b>4</b></span><span>Backyard transformation<b>2</b></span><span>Construction<b>2</b></span></div>
+    <div class="revgrid">
+      <article class="rev rv">
+        <div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“They transformed my backyard into a beautiful little haven, it feels like a completely new space! The team was absolutely wonderful from start to finish.”</blockquote>
+        <p class="reply"><b>Reply from the owner</b>It was a pleasure to create this project for you. Your good taste contributed to the final result.</p>
+        <div class="who"><span class="av">JV</span><span>Jeane Valdes<small>Local Guide · 10 months ago</small></span></div>
+      </article>
+      <article class="rev rv" style="--d:.1s">
+        <div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“Garden Now Landscaping did an excellent job replacing my entire lawn. The owner, Joilson, personally takes care of any issues. I didn’t have to worry about anything.”</blockquote>
+        <p class="reply"><b>Reply from the owner</b>We always follow up on the work done for our clients, so they’re satisfied with the result.</p>
+        <div class="who"><span class="av">AS</span><span>Alex Sandro<small>10 months ago</small></span></div>
+      </article>
+      <article class="rev rv" style="--d:.2s">
+        <div class="stars" role="img" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“Great experience! Professional paver installation completed on time and with excellent quality. The new pavers greatly enhanced the beauty and value of our home.”</blockquote>
+        <p class="reply"><b>Reply from the owner</b>It was truly a pleasure to serve you. If you need anything, just get in touch!</p>
+        <div class="who"><span class="av">GB</span><span>Grasiella Bolivia<small>4 months ago</small></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="visit">
+  <div class="wrap">
+    <div class="contact">
+      <div class="rv">
+        <span class="eyebrow">Visit or call</span>
+        <h2 style="margin:14px 0 8px">Let’s talk about your yard.</h2>
+        <div class="cards">
+          <a class="row" href="tel:+14079141712"><span class="ic"><svg class="ico"><use href="#i-phone"/></svg></span><span><small>Call for a free quote</small><strong>+1 407-914-1712</strong></span></a>
+          <a class="row" href="https://www.google.com/maps/search/?api=1&query=2313+Lake+Debra+Dr+Orlando+FL+32835" target="_blank" rel="noopener"><span class="ic"><svg class="ico"><use href="#i-pin"/></svg></span><span><small>Get directions</small><strong>2313 Lake Debra Dr, Orlando, FL 32835</strong></span></a>
+          <a class="row" href="https://www.instagram.com/gardennowlandscaping" target="_blank" rel="noopener"><span class="ic"><svg class="ico"><use href="#i-insta"/></svg></span><span><small>Follow our projects</small><strong>@gardennowlandscaping</strong></span></a>
+          <div class="row" style="align-items:flex-start"><span class="ic"><svg class="ico"><use href="#i-clock"/></svg></span>
+            <div style="flex:1"><span class="open" id="open"><i></i><span id="openTxt">Hours</span></span>
+              <table class="hours" id="hours"><tbody>
+                <tr data-d="1"><td>Monday</td><td>7 am – 7 pm</td></tr><tr data-d="2"><td>Tuesday</td><td>7 am – 7 pm</td></tr><tr data-d="3"><td>Wednesday</td><td>7 am – 7 pm</td></tr><tr data-d="4"><td>Thursday</td><td>7 am – 7 pm</td></tr><tr data-d="5"><td>Friday</td><td>7 am – 7 pm</td></tr><tr data-d="6"><td>Saturday</td><td>8:30 am – 5 pm</td></tr><tr data-d="0"><td>Sunday</td><td>Closed</td></tr>
+              </tbody></table></div></div>
+        </div>
+      </div>
+      <div class="map rv" style="--d:.12s"><iframe title="Map to Garden Now Landscaping" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=2313+Lake+Debra+Dr+Orlando+FL+32835&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="final rv">
+    <span class="eyebrow" style="color:#6ee7b7">Free quote</span>
+    <h2>Ready for a yard you’ll love?</h2>
+    <p class="lead">Call today and we’ll work within your budget.</p>
+    <a class="btn btn-primary" href="tel:+14079141712"><svg class="ico"><use href="#i-phone"/></svg>Call (407) 914-1712</a>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> Garden Now Landscaping Orlando · Women-owned · LGBTQ+ friendly</span><span><a href="https://www.instagram.com/gardennowlandscaping" target="_blank" rel="noopener">Instagram</a> · <a href="tel:+14079141712">(407) 914-1712</a></span></div></footer>
+
+<div class="callbar"><a class="btn btn-primary" href="tel:+14079141712"><svg class="ico"><use href="#i-phone"/></svg>Call now</a><a class="btn btn-ghost" style="background:#fff" href="#visit">Directions</a></div>
+
+<script>
+(()=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $=s=>document.querySelector(s);
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* scroll-scrubbed hero video */
+  const sec=$('#hero'),vid=$('#van'),poster=$('#poster'),fill=$('#fill');
+  const phases=[...document.querySelectorAll('.phase')];
+  let ready=false,target=0,cur=0;
+  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+  vid.addEventListener('loadedmetadata',()=>{ready=true;vid.pause();vid.currentTime=0;});
+  vid.addEventListener('seeked',()=>{poster.style.visibility='hidden'},{once:true});
+  vid.load();
+  if(reduce){vid.addEventListener('loadedmetadata',()=>{vid.currentTime=vid.duration-.05})}
+  function progress(){
+    const r=sec.getBoundingClientRect(),h=sec.offsetHeight-innerHeight;
+    return clamp(-r.top/h,0,1);
+  }
+  function tick(){
+    const p=progress();target=p;
+    cur+=(target-cur)*.14;
+    if(Math.abs(target-cur)<.0004)cur=target;
+    if(ready&&!reduce){
+      const t=cur*(vid.duration-.05);
+      if(Math.abs(vid.currentTime-t)>.02&&!vid.seeking)vid.currentTime=t;
+    }
+    fill.style.transform='scaleX('+p+')';
+    let idx=0;phases.forEach((el,i)=>{if(p>=+el.dataset.from)idx=i});
+    phases.forEach((el,i)=>el.classList.toggle('on',i===idx));
+    requestAnimationFrame(tick);
+  }
+  if(!reduce)requestAnimationFrame(tick);
+
+  /* reveal on scroll */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  /* reel: play when visible */
+  const reel=$('#reel'),btn=$('#reelBtn');let userPaused=false;
+  const setIcon=()=>{btn.innerHTML='<svg class="ico"><use href="#i-'+(reel.paused?'play':'pause')+'"/></svg>';btn.setAttribute('aria-label',reel.paused?'Play video':'Pause video')};
+  btn.addEventListener('click',()=>{if(reel.paused){userPaused=false;reel.play()}else{userPaused=true;reel.pause()}setIcon()});
+  new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting&&!userPaused&&!reduce)reel.play().then(setIcon).catch(()=>{});else{reel.pause();setIcon()}
+  }),{threshold:.4}).observe(reel);
+
+  /* open-now (Orlando time) */
+  const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+  const g=t=>parts.find(p=>p.type===t).value;
+  const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday'));
+  const mins=(+g('hour')%24)*60+ +g('minute');
+  const win=day===0?null:day===6?[510,1020]:[420,1140];
+  const open=win&&mins>=win[0]&&mins<win[1];
+  $('#open').classList.toggle('is-open',!!open);
+  $('#openTxt').textContent=open?'Open now':(day===0?'Closed today · Opens Monday 7 am':'Closed now');
+  document.querySelector('#hours tr[data-d="'+day+'"]').classList.add('today');
+})();
+</script>
+</body>
+</html>
